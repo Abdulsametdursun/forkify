@@ -1,0 +1,98 @@
+.cartview {
+  &__link {
+    &:link,
+    &:visited {
+      background-color: #bd4242;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s;
+      border-right: 1px solid #fff;
+      text-decoration: none;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+
+    &:hover {
+      background-color: $color-grey-light-1;
+      transform: translateY(-2px);
+    }
+
+    &--active {
+      background-color: $color-grey-light-1 !important;
+    }
+  }
+
+  &__fig {
+    flex: 0 0 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 4rem;
+    margin-right: 1.5rem;
+    position: relative;
+    backface-visibility: hidden;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-grad-1,
+        $color-grad-2
+      );
+      opacity: 0.4;
+    }
+  }
+
+  &__data {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr auto;
+    row-gap: 0.5rem;
+    align-items: center;
+    font-size: 1.6rem;
+  }
+
+  &__user-generated {
+    background-color: rgba($color-grey-light-2, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: 1rem;
+
+    svg {
+      height: 1.5rem;
+      width: 1.5rem;
+      fill: $color-primary;
+    }
+  }
+
+  .btn--remove-cart {
+    padding: 1rem 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    font-size: 1.1rem;
+    border-radius: 0.3rem;
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .btn--remove-cart:hover {
+    background-color: #e63946;
+  }
+  .__name {
+    padding: 1rem;
+  }
+}
